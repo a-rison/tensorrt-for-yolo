@@ -1,0 +1,56 @@
+**/__pycache__/
+
+*.trt
+
+*.onnx 
+
+# Ignore build directories
+**/build/
+**/bin/
+**/obj/
+**/out/
+/Debug/
+/Release/
+
+# Ignore CMake configuration files (if using CMake)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+Makefile.user
+**/**.cmake
+
+# Ignore IDE and editor files
+/.vscode/
+/.idea/
+/.vscode/
+/*.user
+/*.suo
+/*.ncb
+*.class
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled object files
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# Ignore core dumps and log files
+core.*
+*.log
+
+# Ignore executables
+*.exe
+*.out
+*.app
+*.efi
+
+
+
+#Ignore models
+/models

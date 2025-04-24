@@ -1,0 +1,27 @@
+services:
+  yolo-tensorrt:
+    build:
+      context: .  # Path to your Dockerfile
+      dockerfile: Dockerfile
+    image: yolo-tensorrt-image
+    runtime: nvidia
+    network_mode: host
+    container_name: yolo-tensorrt-container
+    volumes:
+      - ./src:/workspace/src  # Sync local 'src' directory to container's '/workspace/src'
+      - ./utils:/workspace/utils  # Sync local 'utils' directory to container's '/workspace/utils'
+      - ./export.py:/workspace/export.py
+      - ./image_batch.py:/workspace/image_batch.py
+      - ./trt.py:/workspace/trt.py
+      - ./models:/workspace/models
+      - ./cpp:/workspace/cpp
+    environment:
+      - DISPLAY=${DISPLAY}
+    working_dir: /workspace
+    command: tail -f /dev/null
+
+    stdin_open: true  # Keep stdin open to allow interaction
+    tty: true  # Allocate a pseudo-terminal so you can interact with the container
+    # ports:
+    #   - "8888:8888"  # Optional: Expose port for JupyterLab if needed
+
